@@ -1,19 +1,55 @@
-import Clases from "./Clases";
-import Funciones from "./Funciones";
-import FunctionsComponent from "./Components/FunctionsComponent";
-import ListaEstudiantes from "./Components/ListaEstudiantes";
+import { ListaEstudiantes } from "./ListaEstudiantes";
+import { ListaEstudiantesClass } from "./ListaEstudiantesClass";
 
-const listaEstudiantes = ["Jose", "Juan", "Luis"];
+const listaNombresEstudiantes = [
+  "José",
+  "Juan",
+  "Luis",
+  "Cristian",
+  "Fiorella",
+  "Yensy",
+];
+
+const listaEstudiantes = [
+  {
+    nombre: "José",
+    apellido: "Pérez",
+    edad: 20,
+  },
+  {
+    nombre: "Juan",
+    apellido: "Pérez",
+    edad: 20,
+  },
+  {
+    nombre: "Luis",
+    apellido: "Pérez",
+    edad: 20,
+  },
+  {
+    nombre: "Cristian",
+    apellido: "Pérez",
+    edad: 20,
+  },
+  {
+    nombre: "Fiorella",
+    apellido: "Pérez",
+    edad: 20,
+  },
+  {
+    nombre: "Yensy",
+    apellido: "Pérez",
+    edad: 20,
+  },
+];
 
 function App() {
-	return (
-		<div>
-			<ListaEstudiantes listaEstudiantes={listaEstudiantes} />
-			{/*<FunctionsComponent >*/}
-			{/*<Clases /> */}
-			{/*<Funciones /> */}
-		</div>
-	);
+  return (
+    <div>
+      <ListaEstudiantes listaEstudiantes={listaNombresEstudiantes} />
+      <ListaEstudiantesClass listaEstudiantes={listaNombresEstudiantes} />
+    </div>
+  );
 }
 
 export default App;

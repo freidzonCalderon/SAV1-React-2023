@@ -1,20 +1,38 @@
 import React from "react";
 import PropsFunciones from "./PropsFunciones";
 
+let timerId = null;
+
 export default function Funciones() {
   const [nombre, setNombre] = React.useState("Luis");
   const [apellido, setApellido] = React.useState("Cascante");
 
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     setNombre("Juan");
-  //     setApellido("Mendez");
-  //   }, 3000);
-  // });
+  // componentDidMount
+  React.useEffect(() => {
+    console.log("Did Mount");
+    timerId = setTimeout(() => {
+      setNombre("Juan");
+      setApellido("Mendez");
+    }, 3000);
+
+    // componentWillUnmount
+    return () => {
+      console.log("Will Unmount");
+      clearTimeout(timerId);
+    };
+  }, []);
+
+  // componentDidUpdate
+  React.useEffect(() => {
+    console.log("Did Update");
+    console.log(nombre);
+  }, [nombre]);
+
   const handleChange = (event) => {
     setNombre(event.target.value);
   };
 
+  console.log("Render");
   return (
     <div>
       {/*  */}
